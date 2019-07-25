@@ -1,6 +1,6 @@
 Package: apeglm
 Title: Approximate posterior estimation for GLM coefficients
-Version: 1.7.3
+Version: 1.7.2
 Authors@R: c(
     person("Anqi", "Zhu", email = "anqizhu@live.unc.edu", role = c("aut","cre")),
     person("Joshua", "Zitovsky", role = "ctb"),
@@ -9,11 +9,19 @@ Authors@R: c(
 Maintainer: Anqi Zhu <anqizhu@live.unc.edu>
 Description: apeglm provides Bayesian shrinkage estimators for effect sizes for a variety of GLM models, using approximation of the posterior for individual coefficients.
 VignetteBuilder: knitr, rmarkdown
-Imports: emdbook, SummarizedExperiment, GenomicRanges, methods, stats, utils, Rcpp
+Imports: emdbook, SummarizedExperiment, GenomicRanges, methods, stats,
+        utils, Rcpp
 Suggests: DESeq2, airway, knitr, rmarkdown, testthat
 LinkingTo: Rcpp, RcppEigen, RcppNumerical
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-biocViews: ImmunoOncology, Sequencing, RNASeq, DifferentialExpression, GeneExpression, Bayesian
+biocViews: ImmunoOncology, Sequencing, RNASeq, DifferentialExpression,
+        GeneExpression, Bayesian
 RoxygenNote: 6.1.1
+NeedsCompilation: yes
+Packaged: 2019-06-16 17:58:09 UTC; Josh
+Author: Anqi Zhu [aut, cre],
+  Joshua Zitovsky [ctb],
+  Joseph Ibrahim [aut],
+  Michael Love [aut]

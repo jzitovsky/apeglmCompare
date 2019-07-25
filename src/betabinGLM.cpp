@@ -82,7 +82,7 @@ public:
     // this is the negative log posterior, scaled,
     // plus a constant to keep the values somewhat small (and not too close to zero)
     double cn = cnst[i];
-    const double f = (neg_obs + neg_prior)/cn + 10.0;
+    const double f = (neg_obs + neg_prior)/cn - 10.0;
 
     // this is the gradient of the negative log posterior, scaled
     grad = (d_neg_obs + d_neg_prior)/cn;
@@ -128,7 +128,7 @@ Rcpp::List betabinGLM(Rcpp::NumericMatrix x, Rcpp::NumericMatrix Y,
     if (i % 100 == 0) Rcpp::checkUserInterrupt();
     optimFunBeta nll(mx, mY, msizes, mthetas, mweights, sigma2, S2, mno_shrink, mshrink, mcnst, i, lbd, ubd);
     beta = minit;
-    int status = optim_lbfgs(nll, beta, fopt, 300, tol, 1e-8);
+    int status = optim_lbfgs(nll, beta, fopt, 300, tol, 1e-10);
     betas.col(i) = beta;
     value[i] = fopt;
     convergence[i] = status;
